@@ -1,0 +1,47 @@
+{
+    "GENERIC": {"priority":2, "action": "same_node", "method": "toast", "message": "Something went wrong"},
+    "PBPI_ERROR": {},
+    "VERIFY_OTP_FAILED": {"priority":2, "action": "same_node", "method": "field_error", "message": "Something went wrong", "component": ""},
+    "PRICE_MISMATCH": {"priority":2, "action": "same_node", "method": "toast", "message": "Something went wrong"},
+    "VALIDATION_FAILED": {},
+    "ILLOGICAL_FLOW_POLICY_EXISTS": {},
+    "ILLOGICAL_FLOW_POLICY_EXPIRED_RENEWAL_DUE": {},
+    "ILLOGICAL_FLOW_PAYMENT_DONE": {},
+    "ILLOGICAL_FLOW_UNACCEPTABLE_ASSET": {},
+    "UPDATE_REJECTED": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "INVALID_COUPON": {
+        "priority":2, "action": "same_node", "method": "field_error", "message": "Something went wrong", "component": ""},
+    "USER_UNAUTHORIZED": {},
+    "ORDER_ID_VERIFICATION_FAILED": {},
+    "UNAUTHORIZED_ACCESS": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "INVALID_PROPOSAL_DATA": {
+        "priority":1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "PROPOSAL_INELIGIBLE_FOR_PLANS": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "PROPOSAL_INELIGIBLE_FOR_PRICING": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "PROPOSAL_INELIGIBLE_FOR_CHECKOUT": {
+        "priority": 2, "action": "same_node", "method": "toast", "message": "Something went wrong"},
+    "UNSERVICEABLE_PINCODE": {
+        "priority": 2, "action": "same_node", "method": "field_error", "message": "Sorry! We currently do not serve this pincode", "component": "pincode"},
+    "MODEL_UNSERVICEABLE": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "PRICING_NOT_AVAILABLE": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "CLONED_PROPOSAL_NOT_VALID_FOR_CHECKOUT": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "NO_PLANS_RETURNED_BY_PRICING": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "PINCODE_NOT_SERVICABLE": {
+        "priority": 2, "action": "same_node", "method": "field_error", "message": "Something went wrong", "component": "pincode"},
+    "INVALID_REGISTRATION_NUMBER": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "PINCODE_PI_NOT_SERVICABLE": {
+        "priority": 2, "action": "same_node", "method": "field_error", "message": "Something went wrong", "component": "pincode"},
+    "ILLOGICAL_FLOW_NO_PLANS_RETURNED": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"},
+    "COMMERCIAL_VEHICLE": {
+        "priority": 1, "action": "redirect_error_node", "method": "", "message": "Something went wrong"}
+}

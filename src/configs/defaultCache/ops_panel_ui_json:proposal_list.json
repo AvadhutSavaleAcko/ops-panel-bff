@@ -1,0 +1,84 @@
+{
+  "url": {
+      "base_path": "auto-buy/proposals",
+      "host_name": "",
+      "query_params": {
+          "ekey": "12345"
+      }
+  },
+  "actions": {
+      "on_load": [
+          {
+              "args": {
+                  "payloadData": {
+                      "is_new": "false",
+                      "origin": "acko",
+                      "product": "car"
+                  },
+                  "requestBody": {
+                      "journey": "auto_buy"
+                  }
+              },
+              "type": "setRequestPayload"
+          }
+      ]
+  },
+  "children": [
+      {
+          "id": "gradient_header",
+          "data": {
+              "props": {
+                  "is_visible": true
+              },
+              "column": 1
+          },
+          "type": "gradient_header"
+      },
+      {
+          "id": "proposals_container",
+          "data": {
+              "props": {
+                  "is_visible": true,
+                  "className": "p-4"
+              },
+              "column": 1,
+              "iterableKey": "proposal_list"
+          },
+          "type": "box_container",
+          "children": [
+              {
+                  "id": "proposal_box",
+                  "type": "proposal_container",
+                  "data": {
+                      "props": {
+                          "is_visible": true,
+                          "className": "mb-4 p-4 border rounded"
+                      }
+                  },
+                  "children": [
+                      {
+                          "id": "proposal_row",
+                          "type": "proposal_row",
+                          "data": {
+                              "props": {
+                                  "is_visible": true,
+                                  "proposal_id": "#ekey",
+                                  "proposal_status": "#proposalStatus",
+                                  "product": "#product",
+                                  "created_on": "#createdOn",
+                                  "updated_on": "#updatedOn"
+                              }
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "meta_data": {
+      "link": "",
+      "page_title": "Your Insurance Proposals",
+      "description": "List of your insurance proposals"
+  },
+  "current_node": "proposal_list"
+}

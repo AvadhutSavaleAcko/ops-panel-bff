@@ -1,0 +1,42 @@
+{
+  "ops_panel": {
+    "default_cohort": {
+      "entry_node": {
+        "data_enrichers": [
+          {
+            "priority": 1,
+            "result_key": "proposal_list",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "motor-orchestrator",
+            "callback_function_name": "getProposalByRegNo"
+          }
+     ],
+        "node_selection_rules": [
+          {
+            "event": {
+              "type": "proposal_list"
+            },
+            "priority": 1,
+            "conditions": {
+              "all": [
+                {
+                  "fact": "proposal",
+                  "value": null,
+                  "operator": "notEqual"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "node2": {
+        "data_enrichers": [
+        ],
+        "node_selection_rules": []
+      }
+    }
+  }
+}
