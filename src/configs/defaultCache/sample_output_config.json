@@ -1,0 +1,1325 @@
+{
+    "url": {
+        "base_path": "ops_panel/dashboard",
+        "host_name": "",
+        "query_params": {}
+    },
+    "actions": {
+        "on_load": [
+            {
+                "args": {
+                    "payloadData": {},
+                    "requestBody": {
+                        "journey": "ops_panel"
+                    }
+                },
+                "type": "setRequestPayload"
+            }
+        ]
+    },
+    "children": [
+        {
+            "id": "dashboard_header",
+            "type": "header",
+            "data": {
+                "row": 1,
+                "props": {
+                    "is_visible": true,
+                    "productOptions": [
+                        {
+                            "value": "auto",
+                            "displayValue": "Auto"
+                        },
+                        {
+                            "value": "health",
+                            "displayValue": "Health"
+                        },
+                        {
+                            "value": "life",
+                            "displayValue": "Life"
+                        },
+                        {
+                            "value": "travel",
+                            "displayValue": "Travel"
+                        },
+                        {
+                            "value": "central",
+                            "displayValue": "Central"
+                        }
+                    ],
+                    "defaultProduct": {
+                        "value": "auto",
+                        "displayValue": "Auto"
+                    }
+                }
+            }
+        },
+        {
+            "id": "dashboard_panel",
+            "type": "panel",
+            "data": {
+                "props": {
+                    "is_visible": true,
+                    "className": "w-full h-full",
+                    "defaultActiveNav": "proposals",
+                    "showSearchByDefault": true
+                }
+            },
+            "children": [
+                {
+                    "id": "dashboard_nav",
+                    "type": "navigation",
+                    "data": {
+                        "props": {
+                            "is_visible": true,
+                            "activeItem": "proposals"
+                        }
+                    },
+                    "children": [
+                        {
+                            "id": "container",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "className": "p-4"
+                                },
+                                "iterableKey": "list"
+                            },
+                            "type": "box_container",
+                            "children": [
+                                {
+                                    "id": "box_1",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "NFOrQC-7xhWyMaD1z1kVWA",
+                                                    "proposal_status": "policy_issued",
+                                                    "product": "car",
+                                                    "created_on": 1730703949000,
+                                                    "updated_on": 1730703968000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_2",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "CcFA1I5bFQ8iyN_E2wBLPA",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1730703772000,
+                                                    "updated_on": 1730703772000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_3",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "7tWrl6B6zpwElzgEwyKXwg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1730703693000,
+                                                    "updated_on": 1730703949000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_4",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "dXY1aNmmk9UbUxqLPl301Q",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1726214600000,
+                                                    "updated_on": 1726214646000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_5",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "qQeWY-W9Xdhoxbsl60stfw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1725535343000,
+                                                    "updated_on": 1725535357000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_6",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "59NADGWDyADXhyqPh6NDvQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1724840497000,
+                                                    "updated_on": 1724840518000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_7",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "z2l1n1V_U8WSD1i_UmfQAQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1724836863000,
+                                                    "updated_on": 1724836933000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_8",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "Fkcnw-jObCxyMhbaHRtcMQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1724660500000,
+                                                    "updated_on": 1724661098000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_9",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "rP9eKTnD4TEJzQ5SPO8q4w",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1724656456000,
+                                                    "updated_on": 1724656469000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_10",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "v7BaPVGiNSILe9TIiPY7Lw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1724656265000,
+                                                    "updated_on": 1724656275000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_11",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "WkjcP38sX8i33CLkau0XUg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1723617250000,
+                                                    "updated_on": 1723617258000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_12",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "eHuSjwgMmGnirnLu7Eb__g",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1723617223000,
+                                                    "updated_on": 1723617235000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_13",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "cVoQHuaIfIPqPtt_Kk96Eg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1723027182000,
+                                                    "updated_on": 1723027193000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_14",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "zCYB93gkSsgrfuKCAwr-xA",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1723017382000,
+                                                    "updated_on": 1723017504000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_15",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "oxHHK1pkjBZmBo2U2QN8wQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722962904000,
+                                                    "updated_on": 1722963406000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_16",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "UuQFtT1U26kbtS0DRmrlJA",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722939204000,
+                                                    "updated_on": 1722939204000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_17",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "d3ScVEwNW1P2wWfbQJ3gtw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722939200000,
+                                                    "updated_on": 1722939200000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_18",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "8aFwI6Bu4DvE7yEqJVp5PQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722939139000,
+                                                    "updated_on": 1722939139000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_19",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "Py0RMkdCM4SaBKUM-fcADQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722939083000,
+                                                    "updated_on": 1722939083000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_20",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "y04ynkCEgAiThBurMBEUeg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722933953000,
+                                                    "updated_on": 1722933953000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_21",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "q_AhFScAIJi6Wak5spsgsQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722929623000,
+                                                    "updated_on": 1722929623000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_22",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "1sCc4zA4PMvvafBoZ-Oz9Q",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722929329000,
+                                                    "updated_on": 1722929329000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_23",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "uXZtDJD95K46c2phBY1Ueg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722929258000,
+                                                    "updated_on": 1722929258000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_24",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "lFvB5LYO0Za0Up42p5wuew",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722513773000,
+                                                    "updated_on": 1722513773000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_25",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "o__qdsItSZ4DEQ6aMMvbqw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722513699000,
+                                                    "updated_on": 1722513699000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_26",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "MVYTr7RO4kB5lbyfOBMNfw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722512533000,
+                                                    "updated_on": 1722512533000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_27",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "885wLnbKDawnOokadt3Ksw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722512418000,
+                                                    "updated_on": 1722512418000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_28",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "Iom9mQTVueFQAjwRnfe6Dw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722511888000,
+                                                    "updated_on": 1722511889000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_29",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "-EF6n-TqrMI567ovTzffWQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722511583000,
+                                                    "updated_on": 1722511583000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_30",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "gBRUubqtOS9m9yKzYKJRYw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722511581000,
+                                                    "updated_on": 1722511581000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_31",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "X-gquqGfw_Z_Qj8s9IcGbw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722511579000,
+                                                    "updated_on": 1722511579000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_32",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "mtLlYVcVwaNhGWcEi4yGHg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722511537000,
+                                                    "updated_on": 1722511537000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_33",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "x96vrEGVsUDncbKjKtNAkw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722511503000,
+                                                    "updated_on": 1722511503000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_34",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "BCdqATlVdjs7diR4H12K9Q",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722504553000,
+                                                    "updated_on": 1722504553000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_35",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "ffZBElNdcUxYD0R6bU1Ifg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722503853000,
+                                                    "updated_on": 1722503854000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_36",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "h2SAJ2rZSkdepGCj9NL0Qw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722503472000,
+                                                    "updated_on": 1722503472000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_37",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "wPLLb-iZealiTeML7VazNw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1722503383000,
+                                                    "updated_on": 1722513773000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_38",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "NISoppBiOal0NBrnx7Ljjg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1719992647000,
+                                                    "updated_on": 1719992723000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_39",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "lwObZcx83P-kXSZbAELrbQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1719992567000,
+                                                    "updated_on": 1719992578000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_40",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "Is-HpfZcPr5wreHcYU-X9w",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1719992422000,
+                                                    "updated_on": 1719992462000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_41",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "WQJoNKdIv507lkuJL76mqg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1719992210000,
+                                                    "updated_on": 1719992210000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_42",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "X36d6gxXOrp3Zhbet-eoRQ",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1719987882000,
+                                                    "updated_on": 1719987882000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_43",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "DtjpiHiQfDRg-22ABpGWBg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1719987177000,
+                                                    "updated_on": 1719987177000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_44",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "fAbNkeK9boGhwJ8j73F23g",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1719987105000,
+                                                    "updated_on": 1719987105000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_45",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "qYyhF6Ad9W1TTKUjaEV5rg",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1718713891000,
+                                                    "updated_on": 1718713895000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_46",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "YMB42XeF7U_1u8mDQeDqHw",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1718713723000,
+                                                    "updated_on": 1718713756000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "box_47",
+                                    "type": "container",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "className": "mb-4 p-4 border rounded"
+                                        }
+                                    },
+                                    "children": [
+                                        {
+                                            "id": "row",
+                                            "type": "table_row",
+                                            "data": {
+                                                "props": {
+                                                    "is_visible": true,
+                                                    "proposal_id": "P0FrCVouZBfuEXVVVE5Y1w",
+                                                    "proposal_status": "terminated",
+                                                    "product": "car",
+                                                    "created_on": 1718713521000,
+                                                    "updated_on": 1718713696000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "meta_data": {
+        "link": "",
+        "page_title": "common Dashboard",
+        "description": "Operations Panel Dashboard"
+    },
+    "current_node": "common_dashboard"
+}

@@ -3,7 +3,6 @@
       "base_path": "auto-buy/proposals",
       "host_name": "",
       "query_params": {
-          "ekey": "12345"
       }
   },
   "actions": {
@@ -11,9 +10,6 @@
           {
               "args": {
                   "payloadData": {
-                      "is_new": "false",
-                      "origin": "acko",
-                      "product": "car"
                   },
                   "requestBody": {
                       "journey": "auto_buy"
@@ -29,8 +25,7 @@
           "data": {
               "props": {
                   "is_visible": true
-              },
-              "column": 1
+              }
           },
           "type": "gradient_header"
       },
@@ -41,7 +36,6 @@
                   "is_visible": true,
                   "className": "p-4"
               },
-              "column": 1,
               "iterableKey": "proposal_list"
           },
           "type": "box_container",

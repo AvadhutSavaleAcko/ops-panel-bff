@@ -8,7 +8,6 @@ import * as fs from 'fs';
 import { PREVIOUS_POLICY_CONFIRMATION_NODE, USER_INFO_NODE, EDIT_MMV_DETAILS_NODE, CHECKOUT_DETAILS_NODE, CHECKOUT_REVIEW_NODE, VERIFY_OTP_NODE, PREVIOUS_CLAIM_CONFIRMATION_NODE, ENTER_MMV_DETAILS_NODE } from "src/constants/constants";
 import { DateUtils } from "src/utils/date-utils";
 import {initializeLogger} from '@acko-sdui/log-formatter';
-import { logs } from "./motor-orchestrator";
 
 let logger = initializeLogger();
 
@@ -47,7 +46,6 @@ export class MotorOrchestratorHelper {
     public static generateUpdateProposalRequestBody(resolvedData: any, requestData: JourneyRequest, requestHeaders: any) : {} {
         if (!requestData || !requestData.data) {
           logger.error(`MotorOrchestratorHelper - generateUpdateProposalRequestBody - Data incomplete for update proposal request.`);
-          logger.sendR2d2("exception", {message: `${logs(resolvedData, requestData, requestHeaders)?.message} MotorOrchestratorHelper - generateUpdateProposalRequestBody - Data incomplete for making getMmvList request.`, ...logs(resolvedData, requestData, requestHeaders)?.data, error: "Data incomplete for making getMmvList request.", exception_type: "api_failed_error", exception_name: "create_proposal_data_incomplete_error"}, R2D2_URL);
           throw new CustomError("Data incomplete for update proposal request.");
         }
 
@@ -222,7 +220,6 @@ export class MotorOrchestratorHelper {
         if (result.status == 200 && (result.data.hasOwnProperty('error_code') || result.data.hasOwnProperty('error_message'))) {
             let errorMessage = result.data.hasOwnProperty('error_message') ? result.data['error_message'] : result.data['error_code'];
             logger.error('MotorOrchestratorHelper - handleIllogicalFlow - Proposal creation failed.');
-            logger.sendR2d2("exception", {message: `${logs({}, requestData, {})?.message} MotorOrchestratorHelper - handleIllogicalFlow - Proposal creation failed.`, ...logs({}, requestData, {})?.data, error: "handleIllogicalFlow - Proposal creation failed.",  exception_type: "api_failed_error", exception_name: "create_proposal_illogical_flow_error"}, R2D2_URL);
             result.status = 400;
             
             result.data['errorMessage'] = errorMessage;

@@ -1,0 +1,397 @@
+{
+    "url": {
+        "base_path": "auto-buy/proposals",
+        "host_name": "",
+        "query_params": {}
+    },
+    "actions": {
+        "on_load": [
+            {
+                "args": {
+                    "payloadData": {},
+                    "requestBody": {
+                        "journey": "auto_buy"
+                    }
+                },
+                "type": "setRequestPayload"
+            }
+        ]
+    },
+    "children": [
+        {
+            "id": "gradient_header",
+            "data": {
+                "props": {
+                    "is_visible": true
+                }
+            },
+            "type": "gradient_header"
+        },
+        {
+            "id": "proposals_container",
+            "type": "box_container",
+            "data": {
+                "props": {
+                    "is_visible": true,
+                    "className": "p-4"
+                }
+            },
+            "children": [
+                {
+                    "id": "proposal_details",
+                    "type": "proposal_details_container",
+                    "data": {
+                        "props": {
+                            "is_visible": true,
+                            "className": "grid grid-cols-1 gap-6"
+                        }
+                    },
+                    "children": [
+                        {
+                            "id": "proposal_json_viewer",
+                            "type": "proposal_button",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "jsonData": "#proposal"
+                                }
+                            }
+                        },
+                        {
+                            "id": "basic_info",
+                            "type": "info_card",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "title": "Basic Information",
+                                    "items": [
+                                        {
+                                            "label": "Proposal ID",
+                                            "value": "#proposal.ekey"
+                                        },
+                                        {
+                                            "label": "Status",
+                                            "value": "#proposal.proposal_status"
+                                        },
+                                        {
+                                            "label": "Product",
+                                            "value": "#proposal.product"
+                                        },
+                                        {
+                                            "label": "Created On",
+                                            "value": "#proposal.created_on"
+                                        },
+                                        {
+                                            "label": "Updated On",
+                                            "value": "#proposal.updated_on"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "user_details",
+                            "type": "info_card",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "title": "User Details",
+                                    "items": [
+                                        {
+                                            "label": "Name",
+                                            "value": "#proposal.user.name"
+                                        },
+                                        {
+                                            "label": "Email",
+                                            "value": "#proposal.user.email"
+                                        },
+                                        {
+                                            "label": "Phone",
+                                            "value": "#proposal.user.phone"
+                                        },
+                                        {
+                                            "label": "Pincode",
+                                            "value": "#proposal.user.pincode"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "vehicle_details",
+                            "type": "info_card",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "title": "Vehicle Information",
+                                    "items": [
+                                        {
+                                            "label": "Registration Number",
+                                            "value": "#proposal.vehicle.registration_number"
+                                        },
+                                        {
+                                            "label": "Make & Model",
+                                            "value": "#proposal.vehicle.car_name"
+                                        },
+                                        {
+                                            "label": "Engine Number",
+                                            "value": "#proposal.vehicle.engine_number"
+                                        },
+                                        {
+                                            "label": "Chassis Number",
+                                            "value": "#proposal.vehicle.chassis_number"
+                                        },
+                                        {
+                                            "label": "Variant ID",
+                                            "value": "#proposal.vehicle.variant_id"
+                                        },
+                                        {
+                                            "label": "Fuel Type",
+                                            "value": "#proposal.vehicle.fuel_type"
+                                        },
+                                        {
+                                            "label": "Engine CC",
+                                            "value": "#proposal.vehicle.cc"
+                                        },
+                                        {
+                                            "label": "RTO",
+                                            "value": "#proposal.vehicle.rto_code"
+                                        },
+                                        {
+                                            "label": "Vehicle Age",
+                                            "value": "#proposal.vehicle.vehicle_age"
+                                        },
+                                        {
+                                            "label": "Seating Capacity",
+                                            "value": "#proposal.vehicle.seating_capacity"
+                                        }
+                                    ]
+                                }
+                            },
+                            "children": [
+                                {
+                                    "id": "previous_policy_info",
+                                    "type": "collapsible_info_card",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "title": "Previous Policy Details",
+                                            "items": [
+                                                {
+                                                    "label": "Insurer Name",
+                                                    "value": "#proposal.vehicle.previous_policy.insurer_name"
+                                                },
+                                                {
+                                                    "label": "Policy Number",
+                                                    "value": "#proposal.vehicle.previous_policy.policy_number"
+                                                },
+                                                {
+                                                    "label": "Policy Type",
+                                                    "value": "#proposal.vehicle.previous_policy.policy_type"
+                                                },
+                                                {
+                                                    "label": "Policy Status",
+                                                    "value": "#proposal.vehicle.previous_policy.policy_status"
+                                                },
+                                                {
+                                                    "label": "Expiry Date",
+                                                    "value": "#proposal.vehicle.previous_policy.expiry_date"
+                                                },
+                                                {
+                                                    "label": "Last Claim Date",
+                                                    "value": "#proposal.vehicle.previous_policy.last_claim_day"
+                                                },
+                                                {
+                                                    "label": "Claims Count",
+                                                    "value": "#proposal.vehicle.previous_policy.claims_count"
+                                                },
+                                                {
+                                                    "label": "Previous NCB",
+                                                    "value": "#proposal.vehicle.previous_policy.previous_ncb"
+                                                },
+                                                {
+                                                    "label": "NCB Source",
+                                                    "value": "#proposal.vehicle.previous_policy.ncb_source"
+                                                },
+                                                {
+                                                    "label": "Is Policy Expired",
+                                                    "value": "#proposal.vehicle.previous_policy.is_expired"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "policy_details",
+                            "type": "info_card",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "title": "Policy Details",
+                                    "items": [
+                                        {
+                                            "label": "Plan Name",
+                                            "value": "#proposal.policy_attributes.plan.display_name"
+                                        },
+                                        {
+                                            "label": "Plan Type",
+                                            "value": "#proposal.policy_attributes.plan.plan_type"
+                                        },
+                                        {
+                                            "label": "Plan ID",
+                                            "value": "#proposal.policy_attributes.plan.plan_id"
+                                        },
+                                        {
+                                            "label": "IDV",
+                                            "value": "#proposal.policy_attributes.idv"
+                                        },
+                                        {
+                                            "label": "Selected IDV Type",
+                                            "value": "#proposal.policy_attributes.selected_idv_type"
+                                        },
+                                        {
+                                            "label": "NCB",
+                                            "value": "#proposal.policy_attributes.ncb"
+                                        },
+                                        {
+                                            "label": "Net Premium",
+                                            "value": "#proposal.policy_attributes.plan.net_premium"
+                                        },
+                                        {
+                                            "label": "Tenure (Years)",
+                                            "value": "#proposal.policy_attributes.tenure"
+                                        },
+                                        {
+                                            "label": "Policy Start Date",
+                                            "value": "#proposal.policy_attributes.policy_start_date"
+                                        },
+                                        {
+                                            "label": "Policy Start Time",
+                                            "value": "#proposal.policy_attributes.policy_start_time"
+                                        },
+                                        {
+                                            "label": "Policy Expiry Date",
+                                            "value": "#proposal.policy_attributes.policy_expiry_date"
+                                        },
+                                        {
+                                            "label": "Start Policy Tomorrow",
+                                            "value": "#proposal.policy_attributes.start_policy_tomorrow"
+                                        },
+                                        {
+                                            "label": "Minimum IDV",
+                                            "value": "#proposal.policy_attributes.min_idv"
+                                        },
+                                        {
+                                            "label": "Maximum IDV",
+                                            "value": "#proposal.policy_attributes.max_idv"
+                                        },
+                                        {
+                                            "label": "Recommended IDV",
+                                            "value": "#proposal.policy_attributes.recommended_idv"
+                                        },
+                                        {
+                                            "label": "Addons",
+                                            "value": "#proposal.policy_attributes.addons"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "payment_details",
+                            "type": "info_card",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "title": "Payment Information",
+                                    "items": [
+                                        {
+                                            "label": "Total Amount",
+                                            "value": "#proposal.payment_attributes.total_amount"
+                                        },
+                                        {
+                                            "label": "Payment Date",
+                                            "value": "#proposal.payment_attributes.payment_date"
+                                        },
+                                        {
+                                            "label": "Payment Order ID",
+                                            "value": "#proposal.payment_attributes.central_payment_service_order_ekey"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "id": "renewal_mandate_details",
+                            "type": "info_card",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "title": "Renewal Mandate Information",
+                                    "items": [
+                                        {
+                                            "label": "Order ID",
+                                            "value": "#proposal.renewal_mandate.order_id"
+                                        },
+                                        {
+                                            "label": "Renewal Status",
+                                            "value": "#proposal.renewal_mandate.renewal_status"
+                                        },
+                                        {
+                                            "label": "Auto Renewal Date",
+                                            "value": "#proposal.renewal_mandate.auto_renewal_date"
+                                        },
+                                        {
+                                            "label": "Mandate ID",
+                                            "value": "#proposal.renewal_mandate.mandate_id"
+                                        },
+                                        {
+                                            "label": "Previous Policy Premium",
+                                            "value": "#proposal.renewal_mandate.previous_policy_gross_premium"
+                                        },
+                                        {
+                                            "label": "Opt Out Reason",
+                                            "value": "#proposal.renewal_mandate.opt_out_reason"
+                                        },
+                                        {
+                                            "label": "Custom Opt Out Reason",
+                                            "value": "#proposal.renewal_mandate.custom_opt_out_reason"
+                                        },
+                                        {
+                                            "label": "Payment Plan ID",
+                                            "value": "#proposal.renewal_mandate.payment_plan_id"
+                                        },
+                                        {
+                                            "label": "Schedule ID",
+                                            "value": "#proposal.renewal_mandate.schedule_id"
+                                        },
+                                        {
+                                            "label": "Instalment ID",
+                                            "value": "#proposal.renewal_mandate.instalment_id"
+                                        },
+                                        {
+                                            "label": "Schedule Date",
+                                            "value": "#proposal.renewal_mandate.schedule_date"
+                                        },
+                                        {
+                                            "label": "Mandate Source",
+                                            "value": "#proposal.renewal_mandate.mandate_source"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "meta_data": {
+        "link": "",
+        "page_title": "single proposal",
+        "description": "single proposal against proposal id , proposal ekey"
+    },
+    "current_node": "proposal"
+}

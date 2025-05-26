@@ -1,0 +1,68 @@
+{
+    "proposals": {
+        "row": 1,
+        "list": {
+            "name": "",
+            "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/advisor/proposal_list/{regNo}",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {},
+            "body": {},
+            "path_variable": {
+                "regNo": "UP14CA3551"
+            }
+        },
+        "actions": []
+    },
+    "vehicle data": {
+        "row": 2,
+        "list": {
+            "name": "",
+            "url": "http://auto-external-service-uat.internal.ackodev.com/vehicle_service/api/v1/vehicles/{regNo}",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {},
+            "body": {},
+            "path_variable": {
+                "regNo": "DL3CCM0672"
+            }
+        },
+        "actions": []
+    },
+    "proposal history": {
+        "row": 3,
+        "list": {
+            "name": "",
+            "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal/{ProposalId}/history",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {},
+            "body": {},
+            "path_variable": {
+                "ProposalId": "798534"
+            }
+        },
+        "actions": []
+    },
+    "payment details": {
+        "row": 4,
+        "list": {
+            "name": "",
+            "url": "https://payment-service-uat.ackodev.com/api/get_payments_details",
+            "method": "GET",
+            "headers": {},
+            "params": {
+                "order_id": "gM_Ur_P3hsQKE1ybhr5vvA"
+            },
+            "body": {},
+            "path_variable": {}
+        },
+        "actions": []
+    }
+}

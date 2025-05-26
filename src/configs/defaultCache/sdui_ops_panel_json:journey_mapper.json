@@ -1,7 +1,7 @@
 {
-    "ops_panel": {
-      "keyNameForFlowManagerConfigs": "ops_panel",
-      "groupNameForFlowManagerConfigs": "ops_panel_flow_manager",
-      "groupNameForUiGeneratorConfigs": "ops_panel_ui_json"
-    }
+  "ops_panel": {
+    "keyNameForFlowManagerConfigs": "ops_panel",
+    "groupNameForFlowManagerConfigs": "ops_panel_flow_manager",
+    "groupNameForUiGeneratorConfigs": "ops_panel_ui_json"
   }
+}

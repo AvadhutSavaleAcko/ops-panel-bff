@@ -1,0 +1,557 @@
+{
+    "priority": 1,
+    "result_key": "proposal_list",
+    "input_to_function": [
+      "requestData",
+      "resolvedData"
+    ],
+    "callback_class_name": "motor-orchestrator",
+    "callback_function_name": "getProposalByRegNo",
+
+    "url": {
+      "base_path": "auto-buy/dashboard",
+      "host_name": "",
+      "query_params": {}
+    },
+    "actions": {
+      "on_load": [
+        {
+          "args": {
+            "payloadData": {
+            },
+            "requestBody": {
+              "journey": "auto_buy"
+            }
+          },
+          "type": "setRequestPayload"
+        }
+      ]
+    },
+    "children": [
+      {
+        "id": "dashboard_header",
+        "type": "header",
+        "data": {
+          "row": 1,
+          "props": {
+            "is_visible": true,
+            "productOptions": [
+              {
+                "value": "auto",
+                "displayValue": "Auto"
+              },
+              {
+                "value": "health",
+                "displayValue": "Health"
+              },
+              {
+                "value": "life",
+                "displayValue": "Life"
+              },
+              {
+                "value": "travel",
+                "displayValue": "Travel"
+              },
+              {
+                "value": "central",
+                "displayValue": "Central"
+              }
+            ],
+            "defaultProduct": {
+              "value": "auto",
+              "displayValue": "Auto"
+            }
+          }
+        }
+      },
+      {
+        "id": "dashboard_panel",
+        "type": "panel",
+        "data": {
+          "props": {
+            "is_visible": true,
+            "className": "w-full h-full"
+          },
+          "row": 2
+        },
+        "children": [
+          {
+            "id": "dashboard_nav",
+            "type": "navigation",
+            "data": {
+              "props": {
+                "is_visible": true
+              }
+            }
+          },
+          {
+            "id": "dashboard_search",
+            "type": "search",
+            "data": {
+              "props": {
+                "is_visible": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "meta_data": {
+      "link": "",
+      "page_title": "Dashboard",
+      "description": "Operations Panel Dashboard"
+    },
+    "current_node": "dashboard",
+    "Proposal History": {
+      "row": 4,
+      "list": {
+          "name": "getProposalHistoryByProposalId",
+          "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal/{ProposalId}/history",
+          "method": "GET",
+          "headers": {
+              "Content-Type": "application/json"
+          },
+          "params": {},
+          "body": {},
+          "path_variable": {
+              "ProposalId": "798534"
+          }
+      },
+      "actions": []
+  }
+  }
+
+      "children": [
+        {
+            "id": "dashboard_header",
+            "type": "header",
+            "data": {
+                "row": 1,
+                "props": {
+                    "is_visible": true,
+                    "productOptions": [
+                        {
+                            "value": "auto",
+                            "displayValue": "Auto"
+                        }
+                    ],
+                    "defaultProduct": {
+                        "value": "auto",
+                        "displayValue": "Auto"
+                    }
+                }
+            }
+        },
+        {
+            "id": "dashboard_nav",
+            "type": "navigation_container",
+            "data": {
+                "row": 2,
+                "props": {
+                    "is_visible": true,
+                    "showForm": false,
+                    "activeTab": null,
+                    "activeTabData": []
+                },
+                "iterableKey": "tab_list"
+            },
+            "children": [
+                {
+                    "id": "dashboard_content",
+                    "type": "navigation",
+                    "data": {
+                        "props": {
+                            "is_visible": true,
+                            "tab_name": "#data.tab_name",
+                            "defaultList": "#data.list_data"
+                        }
+                    },
+                    "actions": {
+                        "on_click": [
+                            {
+                                "type": "handleTabSelection",
+                                "args": {
+                                    "tabName": "#data.tab_name",
+                                    "data": "#data.list_data"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "footer": {
+                "id": "add_model_button",
+                "type": "add_model_button",
+                "data": {
+                    "props": {
+                        "is_visible": true,
+                        "label": "+ Add Model"
+                    }
+                },
+                "actions": {
+                    "on_click": [
+                        {
+                            "type": "showAddModelForm"
+                        }
+                    ],
+                    "on_submit": [
+                        {
+                            "type": "submitModelForm"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+
+    "Policy": {
+      "row": 2,
+      "list": {
+          "name": "getPolicyDetails",
+          "url": "https://maverick-pre-prod.internal.ackodev.com/internal/api/v2/policies/get-policy",
+          "method": "POST",
+          "headers": {
+              "Content-Type": "application/json",
+              "X-SOURCE-ID": "luckyjain",
+              "Cookie": "trackerid=65a70dc1-1d4b-44e1-807b-8e2e6f931892"
+          },
+          "params": {},
+          "body": {
+              "policyNumber": "{policyNumber}",
+              "include_expired": true
+          },
+          "path_variable": {
+              "policyNumber": "BCBA00000087664/00"
+              
+          }
+      },
+      "actions": []
+  },
+  "kyc status": {
+    "row": 7,
+    "list": {
+        "name": "",
+        "url": "https://central-kyc.internal.live.acko.com/api/v1/users/kycstatus",
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "params": {
+            "phone": "9512839552"
+        },
+        "body": {},
+        "path_variable": {}
+    },
+    "actions": []
+}
+
+
+{
+  "Proposals": {
+      "row": 1,
+      "list": {
+          "name": "getProposalsByRegNo",
+          "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/advisor/proposal_list/{regNo}",
+          "method": "GET",
+          "headers": {
+              "Content-Type": "application/json"
+          },
+          "params": {},
+          "body": {},
+          "path_variable": {
+              "regNo": "DL3CCM0672"
+          }
+      },
+      "actions": [
+          {
+              "id": 1,
+              "name": "getProposalsByRegNo",
+              "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/advisor/proposal_list/{regNo}",
+              "method": "GET",
+              "headers": {
+                  "Content-Type": "application/json"
+              },
+              "params": {},
+              "body": {},
+              "path_variable": {
+                  "regNo": "DL3CCM0672"
+              }
+          }
+      ]
+  },
+  "Vehicle data": {
+      "row": 2,
+      "list": {
+          "name": "getVehicleData",
+          "url": "http://auto-external-service-uat.internal.ackodev.com/vehicle_service/api/v1/vehicles/{regNo}",
+          "method": "GET",
+          "headers": {
+              "Content-Type": "application/json"
+          },
+          "params": {},
+          "body": {},
+          "path_variable": {
+              "regNo": "DL3CCM0672"
+          }
+      },
+      "actions": []
+  },
+  "Proposal History": {
+      "row": 4,
+      "list": {
+          "name": "getProposalHistoryByProposalId",
+          "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal/{ProposalId}/history",
+          "method": "GET",
+          "headers": {
+              "Content-Type": "application/json"
+          },
+          "params": {},
+          "body": {},
+          "path_variable": {
+              "ProposalId": "798534"
+          }
+      },
+      "actions": []
+  },
+  "PUCC": {
+      "row": 4,
+      "list": {
+          "name": "",
+          "url": "http://auto-external-service-uat.internal.ackodev.com/vehicle_service/api/v1/pucc",
+          "method": "GET",
+          "headers": {
+              "Content-Type": "application/json"
+          },
+          "params": {
+              "registration-number": "DL11CB5181"
+          },
+          "body": {},
+          "path_variable": {}
+      },
+      "actions": []
+  },
+  "Challans": {
+      "row": 6,
+      "list": {
+          "name": "",
+          "url": "http://auto-external-service-uat.internal.ackodev.com/vehicle_service/api/v1/challans",
+          "method": "GET",
+          "headers": {
+              "Content-Type": "application/json"
+          },
+          "params": {
+              "registration-number": "DL11CB5181"
+          },
+          "body": {},
+          "path_variable": {}
+      },
+      "actions": []
+  }
+}
+
+
+
+//new data enricher
+  {
+    "priority": 1,
+    "result_key": "tab_list",
+    "input_to_function": [
+      "requestData",
+      "resolvedData"
+    ],
+    "callback_class_name": "custom-apis",
+    "callback_function_name": "newModelDataForDashboard"
+  }'
+
+  
+  {
+    "id": "add_model_button",
+    "type": "add_model_button",
+    "data": {
+        "row":2,
+        "props": {
+            "is_visible": false,
+            "label": "+ Add Model"
+        }
+    },
+    "actions": {
+        "on_click": [
+            {
+                "args": {},
+                "type": "showAddModelForm"
+            }
+        ],
+        "on_submit": [
+            {
+                "args": {},
+                "type": "submitModelForm"
+            }
+        ]
+    }
+}
+
+
+///common dashboard file
+{
+  "url": {
+      "base_path": "ops_panel/dashboard",
+      "host_name": "",
+      "query_params": {}
+  },
+  "actions": {
+      "on_load": [
+          {
+              "args": {
+                  "payloadData": {},
+                  "requestBody": {
+                      "journey": "ops_panel"
+                  }
+              },
+              "type": "setRequestPayload"
+          }
+      ]
+  },
+  "children": [
+      {
+          "id": "dashboard_header",
+          "type": "header",
+          "data": {
+              "row": 1,
+              "props": {
+                  "is_visible": true,
+                  "productOptions": [
+                      {
+                          "value": "auto",
+                          "displayValue": "Auto"
+                      }
+                  ],
+                  "defaultProduct": {
+                      "value": "auto",
+                      "displayValue": "Auto"
+                  }
+              }
+          }
+      },
+      {
+          "id": "navigation_with_add_model_container",
+          "type": "navigation_with_add_model_container",
+          "data": {
+              "row": 2,
+              "props": {
+                  "is_visible": true
+              }
+          },
+          "children": [
+              {
+                  "id": "dashboard_nav",
+                  "type": "navigation_container",
+                  "data": {
+                      "row": 1,
+                      "props": {
+                          "is_visible": true,
+                          "showForm": false,
+                          "activeTab": null,
+                          "activeTabData": [],
+                          "dataToConfigureNewModel": "#dataToConfigureNewModel"
+                      },
+                      "iterableKey": "tab_list"
+                  },
+                  "children": [
+                      {
+                          "id": "dashboard_content",
+                          "type": "navigation",
+                          "data": {
+                              "props": {
+                                  "is_visible": true,
+                                  "tab_name": "#tab_name",
+                                  "defaultList": "#list_data"
+                              }
+                          },
+                          "actions": {
+                              "on_click": [
+                                  {
+                                      "type": "handleTabSelection",
+                                      "args": {
+                                          "tabName": "#tab_name",
+                                          "data": "#list_data"
+                                      }
+                                  }
+                              ]
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "meta_data": {
+      "link": "",
+      "page_title": "Common Dashboard",
+      "description": "Operations Panel Dashboard"
+  },
+  "current_node": "common_dashboard"
+}
+
+
+///ADD MODEL FORM CHILD
+{
+    "id": "add_model_form",
+    "type": "add_model_form",
+    "data": {
+      "props": {
+        "row":3,
+        "is_visible": false
+      }
+    },
+    "actions": {
+      "on_submit": [
+        {
+          "type": "submitModelForm",
+          "args": {
+            "requestBody": {
+              "current_node": "common_dashboard",
+              "journey": "ops_panel"
+            }
+          }
+        }
+      ],
+      "on_cancel": [
+        {
+          "type": "setGlobalData",
+          "args": {
+            "showForm": false
+          }
+        }
+      ]
+    }
+  },
+
+
+
+  /// default table config
+
+  {
+    "id": "data_table",
+    "type": "default_table",
+    "data": {
+      "row": 2,
+      "props": {
+        "is_visible": true,
+        "data": "#particular_tab_data.list_data"
+      }
+    },
+    "actions": {
+      "view_details": [
+        {
+          "type": "updateProps",
+          "args": {
+            "component_id": "proposal_json_modal",
+            "update_props": {
+              "is_visible": true,
+              "jsonData": ""
+            }
+          }
+        }
+      ]
+    }
+  }

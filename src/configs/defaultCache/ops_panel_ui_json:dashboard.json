@@ -1,0 +1,156 @@
+{
+  "url": {
+    "base_path": "ops_panel/dashboard",
+    "host_name": "",
+    "query_params": {}
+  },
+  "actions": {
+    "on_load": [
+      {
+        "args": {
+          "payloadData": {},
+          "requestBody": {
+            "journey": "ops_panel"
+          }
+        },
+        "type": "setRequestPayload"
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "dashboard_header",
+      "type": "header",
+      "data": {
+        "row": 1,
+        "props": {
+          "is_visible": true,
+          "productOptions": [
+            {
+              "value": "auto",
+              "displayValue": "Auto"
+            },
+            {
+              "value": "health",
+              "displayValue": "Health"
+            },
+            {
+              "value": "life",
+              "displayValue": "Life"
+            },
+            {
+              "value": "travel",
+              "displayValue": "Travel"
+            },
+            {
+              "value": "central",
+              "displayValue": "Central"
+            }
+          ],
+          "defaultProduct": {
+            "value": "auto",
+            "displayValue": "Auto"
+          }
+        }
+      }
+    },
+    {
+      "id": "dashboard_panel",
+      "type": "panel",
+      "data": {
+        "props": {
+          "is_visible": true,
+          "className": "w-full h-full",
+          "defaultActiveNav": "proposals",
+          "showSearchByDefault": true
+        },
+        "row": 2
+      },
+      "children": [
+        {
+          "id": "dashboard_nav",
+          "type": "navigation",
+          "data": {
+            "props": 
+            {
+              "is_visible": true,
+              "activeItem": "proposals",
+              "navItems": [
+                {
+                  "id": "proposals",
+                  "label": "Proposals",
+                  "searchTypes": [
+                    {
+                      "id": "reg",
+                      "label": "Registration Number",
+                      "placeholder": "Enter Registration Number"
+                    },
+                    {
+                      "id": "policy",
+                      "label": "Policy Number",
+                      "placeholder": "Enter Policy Number"
+                    },
+                    {
+                      "id": "proposal",
+                      "label": "Proposal ID",
+                      "placeholder": "Enter Proposal ID"
+                    },
+                    {
+                      "id": "ekey",
+                      "label": "Proposal eKey",
+                      "placeholder": "Enter Proposal eKey"
+                    },
+                    {
+                      "id": "payment",
+                      "label": "Payment ID",
+                      "placeholder": "Enter Payment ID"
+                    }
+                  ]
+                },
+                {
+                  "id": "vehicle_data",
+                  "label": "Vehicle Data",
+                  "searchTypes": [
+                    {
+                      "id": "reg",
+                      "label": "Registration Number",
+                      "placeholder": "Enter Registration Number"
+                    }
+                  ]
+                },
+                {
+                  "id": "policies",
+                  "label": "Policies",
+                  "searchTypes": [
+                    {
+                      "id": "policy",
+                      "label": "Policy Number",
+                      "placeholder": "Enter Policy Number"
+                    }
+                  ]
+                },
+                {
+                  "id": "assets",
+                  "label": "Assets",
+                  "searchTypes": [
+                    {
+                      "id": "asset",
+                      "label": "Asset ID",
+                      "placeholder": "Enter Asset ID"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "meta_data": {
+    "link": "",
+    "page_title": "Dashboard",
+    "description": "Operations Panel Dashboard"
+  },
+  "current_node": "dashboard"
+}

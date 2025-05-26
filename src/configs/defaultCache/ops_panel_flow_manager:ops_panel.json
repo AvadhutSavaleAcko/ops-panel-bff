@@ -5,6 +5,22 @@
         "data_enrichers": [
           {
             "priority": 1,
+            "result_key": "tab_name_list",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getTabNameList"
+          }
+        ],
+        "node_selection_rules": [
+        ]
+      },
+      "dashboard": {
+        "data_enrichers": [        
+          {
+            "priority": 1,
             "result_key": "proposal_list",
             "input_to_function": [
               "requestData",
@@ -12,8 +28,48 @@
             ],
             "callback_class_name": "motor-orchestrator",
             "callback_function_name": "getProposalByRegNo"
+          },
+          {
+            "priority": 2,
+            "result_key": "proposal",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "motor-orchestrator",
+            "callback_function_name": "getProposalByPaymentId"
+          },
+          {
+            "priority": 3,
+            "result_key": "proposal",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "motor-orchestrator",
+            "callback_function_name": "getProposalByProposalEkey"
+          },
+          {
+            "priority": 2,
+            "result_key": "tab_info",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getTabInfo"
+          },
+          {
+            "priority": 3,
+            "result_key": "list",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getList"
           }
-     ],
+        ],
         "node_selection_rules": [
           {
             "event": {
@@ -32,10 +88,112 @@
           }
         ]
       },
-      "node2": {
+      "common_dashboard": {
         "data_enrichers": [
+          {
+            "priority": 1,
+            "result_key": "dataToConfigureNewModel",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "configureDataModel"
+          },
+          {
+            "priority": 2,
+            "result_key": "isSaved",
+            "input_to_function": [
+              "requestData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "formatToSave"
+          },
+          {
+            "priority": 2,
+            "result_key": "tab_list",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "newModelDataForDashboard"
+          },
+          {
+            "priority": 3,
+            "result_key": "tab_name_list",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getTabNameList"
+          },
+          {
+            "priority": 4,
+            "result_key": "particular_tab_data",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getParticularTabData"
+          }
         ],
-        "node_selection_rules": []
+        "node_selection_rules": [
+        ]
+      },
+      "default_list":{
+        "data_enrichers": [
+          {
+            "priority": 1,
+            "result_key": "tab_name_list",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getTabNameList"
+          },
+          {
+            "priority": 2,
+            "result_key": "particular_tab_data",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getParticularTabData"
+          }
+        ],
+        "node_selection_rules": [
+        ]
+      },
+      "add_model_form": {
+        "data_enrichers": [
+          {
+            "priority": 1,
+            "result_key": "tab_name_list",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getTabNameList"
+          },
+          {
+            "priority": 2,
+            "result_key": "particular_tab_data",
+            "input_to_function": [
+              "requestData",
+              "resolvedData"
+            ],
+            "callback_class_name": "custom-apis",
+            "callback_function_name": "getParticularTabData"
+          }
+        ],
+        "node_selection_rules": [
+        ]
       }
     }
   }

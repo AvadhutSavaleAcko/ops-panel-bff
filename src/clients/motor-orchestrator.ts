@@ -118,10 +118,11 @@ export function logs(resolvedData: any, requestData: any, requestHeaders: any): 
     return { message: `${trackerId}${proposalLog}${registrationNumberLog}${currentNode}`, data: data };
 }
 async function getProposalByRegNo(resolvedData: any, requestData: JourneyRequest, requestHeaders: any): Promise<any> {
-    
+    let regNo = requestData?.data?.registration_number;
+    if(requestData?.data?.registration_number == null || requestData?.data?.registration_number == undefined)   return {data: []};
     try {
         console.log("Received requestData:", JSON.stringify(requestData, null, 2)); 
-        const requestUrl = `https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal_list/${requestData?.data?.registration_number}`;
+        const requestUrl = `https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal_list/${regNo}`;
 
         logger.log(`${logs(resolvedData, requestData, requestHeaders)?.message} motor-orchestrator - getProposalFromMO - request requestUrl: ${requestUrl}`);
         
@@ -130,7 +131,48 @@ async function getProposalByRegNo(resolvedData: any, requestData: JourneyRequest
                 "Content-Type": "application/json"
             }
         });
-        // logger.log(`${logs(resolvedData, requestData, requestHeaders)?.message} motor-orchestrator - getProposalFromMO - response: ${JSON.stringify(result, null, 2)}`);
+        return result;
+    } catch (error) {
+        logger.error("Error fetching proposal from Motor Orchestrator:", error);
+        throw new Error("Failed to fetch proposal from Motor Orchestrator.");
+    }
+}
+
+async function getProposalByPaymentId(resolvedData: any, requestData: JourneyRequest, requestHeaders: any): Promise<any> {
+    let payment_id = requestData?.data?.payment_id;
+    if(payment_id == null || payment_id == undefined)   return {data: []};
+    try {
+        console.log("Received requestData:", JSON.stringify(requestData, null, 2)); 
+        const requestUrl = `https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal/${payment_id}`;
+
+        logger.log(`${logs(resolvedData, requestData, requestHeaders)?.message} motor-orchestrator - getProposalFromMO - request requestUrl: ${requestUrl}`);
+        
+        const result = await axios.get(requestUrl, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        return result;
+    } catch (error) {
+        logger.error("Error fetching proposal from Motor Orchestrator:", error);
+        throw new Error("Failed to fetch proposal from Motor Orchestrator.");
+    }
+}
+
+async function getProposalByProposalEkey(resolvedData: any, requestData: JourneyRequest, requestHeaders: any): Promise<any> {
+    let  proposal_ekey = requestData?.data?.proposal_ekey;
+    if(proposal_ekey == null || proposal_ekey == undefined)   return {data: []};
+    try {
+        console.log("Received requestData:", JSON.stringify(requestData, null, 2)); 
+        const requestUrl = `https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v1/proposals/${proposal_ekey}`;
+
+        logger.log(`${logs(resolvedData, requestData, requestHeaders)?.message} motor-orchestrator - getProposalFromMO - request requestUrl: ${requestUrl}`);
+        
+        const result = await axios.get(requestUrl, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
         return result;
     } catch (error) {
         logger.error("Error fetching proposal from Motor Orchestrator:", error);
@@ -141,5 +183,7 @@ async function getProposalByRegNo(resolvedData: any, requestData: JourneyRequest
 module.exports = {
     getProposal,
     updateProposal,
-    getProposalByRegNo
+    getProposalByRegNo,
+    getProposalByPaymentId,
+    getProposalByProposalEkey
 };

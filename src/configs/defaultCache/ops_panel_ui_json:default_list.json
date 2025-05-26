@@ -1,0 +1,238 @@
+{
+    "url": {
+        "base_path": "ops_panel/dashboard",
+        "host_name": "",
+        "query_params": {}
+    },
+    "actions": {
+        "on_load": [
+            {
+                "args": {
+                    "payloadData": {},
+                    "requestBody": {
+                        "journey": "ops_panel",
+                        "current_node": "common_dashboard"
+                    }
+                },
+                "type": "setRequestPayload"
+            }
+        ]
+    },
+    "children": [
+        {
+            "id": "dashboard_header",
+            "type": "header",
+            "data": {
+                "row": 1,
+                "props": {
+                    "is_visible": true,
+                    "productOptions": [
+                        {
+                            "value": "auto",
+                            "displayValue": "Auto"
+                        }
+                    ],
+                    "defaultProduct": {
+                        "value": "auto",
+                        "displayValue": "Auto"
+                    }
+                }
+            }
+        },
+        {
+            "id": "dashboard_layout",
+            "type": "flex_container",
+            "data": {
+                "props": {
+                    "is_visible": true,
+                    "styles": {
+                        "display": "flex",
+                        "min-height": "calc(100vh - 80px)"
+                    }
+                },
+                "column": 2
+            },
+            "children": [
+                {
+                    "id": "sidebar_container",
+                    "type": "sidebaar_container",
+                    "data": {
+                        "props": {
+                            "is_visible": true,
+                            "styles": {
+                                "width": "250px",
+                                "background": "#2c3e50"
+                            }
+                        },
+                        "column": 1
+                    },
+                    "children": [
+                        {
+                            "id": "navigation_tabs",
+                            "type": "navigation_container",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "showForm": false,
+                                    "activeTab": "",
+                                    "activeTabData": []
+                                },
+                                "iterableKey": "tab_name_list"
+                            },
+                            "children": [
+                                {
+                                    "id": "nav_item",
+                                    "type": "navigation",
+                                    "data": {
+                                        "props": {
+                                            "is_visible": true,
+                                            "tab_name": "#tab_name"
+                                        }
+                                    },
+                                    "actions": {
+                                        "on_click": [
+                                            {
+                                                "type": "submit_call",
+                                                "args": {
+                                                    "ids": [
+                                                        "content_title",
+                                                        "data_table"
+                                                    ],
+                                                    "reverseIds": [
+                                                        "add_model_form",
+                                                        "content_title"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "add_model_button",
+                            "type": "add_model_button",
+                            "data": {
+                                "props": {
+                                    "is_visible": true,
+                                    "label": "+ Add Model"
+                                }
+                            },
+                            "actions": {
+                                "on_click": [
+                                    {
+                                        "type": "submit_call",
+                                        "args": {
+                                            "ids": [
+                                                "add_model_form"
+                                            ],
+                                            "reverseIds": [
+                                                "data_table",
+                                                "configure_model",
+                                                "content_title"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "content_section",
+                    "type": "box_container",
+                    "data": {
+                        "props": {
+                            "is_visible": true,
+                            "styles": {
+                                "flex": "1",
+                                "padding": "24px",
+                                "margin-left": "40px"
+                            }
+                        },
+                        "column": 2
+                    },
+                    "children": [
+                        {
+                            "id": "content_title",
+                            "type": "page_heading",
+                            "data": {
+                                "row": 1,
+                                "props": {
+                                    "is_visible": true,
+                                    "text": "#particular_tab_data.tab_name"
+                                }
+                            }
+                        },
+                        {
+                            "id": "data_table",
+                            "type": "default_table",
+                            "data": {
+                                "row": 2,
+                                "props": {
+                                    "is_visible": true
+                                }
+                            },
+                            "children": [
+                                {
+                                    "id": "table_toolbar",
+                                    "type": "toolbar",
+                                    "data": {
+                                        "row": 1,
+                                        "props": {
+                                            "is_visible": true,
+                                            "search": {
+                                                "enabled": true,
+                                                "placeholder": "Search..."
+                                            },
+                                            "export": {
+                                                "enabled": true,
+                                                "label": "Export"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "table_content",
+                                    "type": "table_content",
+                                    "data": {
+                                        "row": 2,
+                                        "props": {
+                                            "is_visible": true,
+                                            "data": "#particular_tab_data.list_data",
+                                            "pagination": {
+                                                "currentPage": 1,
+                                                "rowsPerPage": 10
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "table_pagination",
+                                    "type": "pagination",
+                                    "data": {
+                                        "row": 3,
+                                        "props": {
+                                            "is_visible": true,
+                                            "rowsPerPageOptions": [
+                                                10,
+                                                20,
+                                                30
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "meta_data": {
+        "link": "",
+        "page_title": "Common Dashboard",
+        "description": "Operations Panel Dashboard"
+    },
+    "current_node": "default_list"
+}

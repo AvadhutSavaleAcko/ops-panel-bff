@@ -1,0 +1,178 @@
+{
+    "current_node": "entry_node",
+    "expected_node": "dashboard",
+    "data": {
+        "tab_name": "proposals",
+        "row": 1,
+        "list": {
+            "name": "getProposalsByRegNo",
+            "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/advisor/proposal_list/{regNo}",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {},
+            "body": {},
+            "path_variable": {
+                "regNo": "DL3CCM0672"
+            }
+        },
+        "actions":[
+            {
+                "id":2,
+                "name": "getProposalsByPaymentId",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/advisor/proposal/{paymentId}",
+                "method": "GET",
+                "headers":{
+                    "Content-Type": "application/json"
+                },
+                "params": {},
+                "body": {},
+                "path_variable":{
+                    "paymentId": "m5z5tjs4ABAGMP1DCKFU"
+                }
+            },
+            {
+                "id":3,
+                "name": "getProposalsByProposalEkey",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v1/proposals/{proposalEkey}",
+                "method": "GET",
+                "headers":{
+                    "Content-Type": "application/json"
+                },
+                "params": {},
+                "body": {},
+                "path_variable":{
+                    "proposalEkey": "NFOrQC-7xhWyMaD1z1kVWA"
+                }
+            },
+            {
+                "id":4,
+                "name": "getProposalsByProposalId",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/advisor/proposal/proposal_id/{proposalId}",
+                "method": "GET",
+                "headers":{
+                    "Content-Type": "application/json"
+                },
+                "params": {},
+                "body": {},
+                "path_variable":{
+                    "proposalId": "798534"
+                }
+            },
+            {
+                "id":5,
+                "name": "initiateRefund",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/proposals/{proposalEkey}/refund",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "initiator": "system"
+                },
+                "params": {
+                    "refund_reason": "pi_not_scheduled"
+                },
+                "body": {},
+                "path_variable": {
+                    "proposalEkey": "VMANlXwA_ARRuc8Em18i6A"
+                }
+            },
+            {
+                "id":6,
+                "name": "optOutRenewalMandate",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/api/v1/renewals/mandate/opt-out",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cookie": "trackerid=660ae87d-dc4c-4041-82bb-25dda8a4fae7"
+                },
+                "params": {},
+                "body": {
+                    "proposal_id": "ThHPmWtl3SBm0rkEs1lUxg",
+                    "consent": true
+                },
+                "path_variable": {}
+            },
+            {
+                "id":7,
+                "name": "updateProposalField",
+                "url": "http://proposal-builder.internal.live.acko.com/internal/auto/proposalbuilder/api/v2/proposals/updatefield/{proposalEkey}",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "initiator": "storefront",
+                    "userkey": "fnLzEjHqhJDe48PU9k37G6LExCm5CD6Y",
+                    "Cookie": "acko_visit=c9OCQHm9Wq-mNSSwpdN16A; trackerid=MS3_dkplB-wzhYc_fOXhgw"
+                },
+                "params": {},
+                "body": {
+                    "status": "pi_approved"
+                },
+                "path_variable": {
+                    "proposalEkey": "65QhPOMWjLRqBvtmFSO4TQ"
+                }
+            },
+            {
+                "id":8,
+                "name": "getRenewalProposalByPolicyNumber",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/v2/advisor/renewals/proposal/get",
+                "method": "GET",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cookie": "trackerid=65a70dc1-1d4b-44e1-807b-8e2e6f931892"
+                },
+                "params": {
+                    "policy_number": "BCBA00000087869/00"
+                },
+                "body": {},
+                "path_variable": {}
+            },
+            {
+                "id":9,
+                "name": "getOrCreateRenewalProposal",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/renewals/proposal",
+                "method": "GET",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cookie": "trackerid=660ae87d-dc4c-4041-82bb-25dda8a4fae7"
+                },
+                "params": {
+                    "policy_number": "DCCR10160989833/00"
+                },
+                "body": {},
+                "path_variable": {}
+            },
+            {
+                "id": 10,
+                "name": "getProposalHistoryById",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal/{proposalId}/history",
+                "method": "GET",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cookie": "trackerid=65a70dc1-1d4b-44e1-807b-8e2e6f931892"
+                },
+                "params": {},
+                "body": {},
+                "path_variable": {
+                    "proposalId": "798534"
+                }
+            },
+            {
+                "id": 11,
+                "name": "getProposalHistoryByEkey",
+                "url": "https://motor-orchestrator-uat.internal.ackodev.com/motororchestrator/internal/api/advisor/proposal/ekey/{proposalEkey}/history",
+                "method": "GET",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cookie": "acko_visit=jyw9BKG-I8Uykcie4mftkw; trackerid=65a70dc1-1d4b-44e1-807b-8e2e6f931892"
+                },
+                "params": {},
+                "body": {},
+                "path_variable": {
+                    "proposalEkey": "NFOrQC-7xhWyMaD1z1kVWA"
+                }
+            }
+        ]
+    },
+    "journey": "ops_panel"
+}

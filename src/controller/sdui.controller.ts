@@ -5,7 +5,6 @@ import { CONTEXT_RULES_RULE_KEY, CONFIG_PATH, CONTEXT_RULES_RULE_SUB_KEY, DEFAUL
 import { CommonUtils } from 'src/utils/common-utils';
 import { initializeLogger } from '@acko-sdui/log-formatter';
 const httpContext = require('express-http-context');
-
 const logger = initializeLogger();
 
 @Controller('sdui/api/v1')
@@ -41,11 +40,6 @@ export class SduiController {
       this.frameworkConfiguration.configSource
     );
     // this.bffExecutor = new Executor(frameworkConfiguration);
-  }
-
-  @Get('/test')
-  getTestMessage(): any {
-    return "test";
   }
 
   // using @Req() for getting full request and extracting headers from it, ideally we can use this to get body as well
@@ -151,6 +145,48 @@ export class SduiController {
       frameworkConfiguration.groupNameForUiGeneratorConfigs = groupNameForUiGeneratorConfigs;
       frameworkConfiguration.keyNameForFlowManagerConfigs = keyNameForFlowManagerConfigs;
       frameworkConfiguration.groupNameForFlowManagerConfigs = groupNameForFlowManagerConfigs;
+    }
+  }
+
+  @Post('/ops-panel/next-node')
+  @HttpCode(200)
+  async identifyNextNodeForOpsPanel(
+    @Req() req,
+    @Res() res,
+  ): Promise<any> {
+     try {
+      const journeyRequest: JourneyRequest = { ...req.body };
+      console.log("journeyRequest", journeyRequest);
+      return res.send(journeyRequest);
+     }catch (error) {
+      if (error instanceof ApiError) {
+        logger.error(`API Error: " ${error?.message} ${error?.data}`);
+        throw new HttpException({message: `API Error: ${error?.message}`, data: error?.data}, 400);
+      }
+      
+      if (error instanceof InterfaceError) {
+        logger.error(`Interface Error: " ${error?.message} ${error?.data}`);
+        throw new HttpException({
+            message: `${error?.message}`,
+            data: {
+              code: INTERFACE_ERROR,
+              error_details: {
+                message: error?.data,
+                action: "same_node",
+                method: "toast"
+              },
+            },
+          }, 500);
+      }
+
+      if (error instanceof ClientError) {
+        logger.error(`Downstream API Error: " ${error['message']}`);
+        throw new HttpException("Downstream API Error: " + error['message'], HttpStatus.BAD_REQUEST);
+      } else {
+        let errorMessage = error?.response?.data || error['message'];
+        logger.error(`Could not evaluate next node: " ${JSON.stringify(errorMessage)}`);
+        throw new HttpException("Could not evaluate next node: " + error['message'], HttpStatus.INTERNAL_SERVER_ERROR);
+      }
     }
   }
 }
